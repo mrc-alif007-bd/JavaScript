@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <script>
+        
+        function welcome(name){
+            alert(name + " Habibi come to java");
+
+        }       
+    </script>
+  <button onclick='welcome(prompt("enter your name"))'>button</button>   -->
+
+
+    <h3>Calculator</h3>
+    <div id = "display"></div>
+    <script>
+        function addision(x,y){
+            let z;
+            x = (prompt("Enter 1st number"));
+            y = (prompt("Enter 2nd number"));
+            x = parseInt(x);
+            y = parseInt(y);
+           z = ( x+ y);
+           document.getElementById("display").innerHTML = z ;
+        }
+
+    </script>
+    <button onclick="addision()">addision</button>
+
+    <script>
+        function multiply(x,y){
+            let z ;
+            x = (prompt("Enter 1st number"));
+            y = (prompt("Enter 2nd number"));
+            x = parseInt(x);
+            y = parseInt(y);
+            z = ( x* y);
+            document.getElementById("display").innerHTML = z ;
+        }
+
+    </script>
+    <button onclick="multiply()">multiply</button>
+
+    <script>
+        function subtracsion(x,y){
+            let z ;
+            x = (prompt("Enter 1st number"));
+            y = (prompt("Enter 2nd number"));
+            x = parseInt(x);
+            y = parseInt(y);
+            z = ( x- y);
+          document.getElementById("display").innerHTML = z ;
+        }
+
+    </script>
+    <button onclick="subtracsion()">subtracsion</button>
+
+    <script>
+        function division(x,y){
+            let z ;
+            x = (prompt("Enter 1st number"));
+            y = (prompt("Enter 2nd number"));
+            x = parseInt(x);
+            y = parseInt(y);
+            z = ( x/ y);
+            document.getElementById("display").innerHTML = z ;
+        }
+
+    </script>
+    <button onclick="division()">division</button>
+</body>
+
+</html>

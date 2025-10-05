@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        #display {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #bf7777;
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+        }
+        h3 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h3>Registration Form</h3>
+        <form name="rgs" id="rgs">
+            Name :<br>
+            <input type="text" name="fullname" placeholder="Enter Your Name" required><br><br>
+
+            Gender : <br>
+            <input type="radio" name="gender" value="Male" required> Male
+            <input type="radio" name="gender" value="Female" required> Female<br><br>
+
+            District :<br>
+            <select name="district" required>
+                <option value="" disabled selected>Select one</option>
+                <option value="Madaripur">Madaripur</option>
+                <option value="Dhaka">Dhaka</option>
+                <option value="Rajshahi">Rajshahi</option>
+                <option value="Barishal">Barishal</option>
+                <option value="Cumilla">Cumilla</option>
+                <option value="Rangpur">Rangpur</option>
+            </select><br><br>
+
+            Address : <br>
+            <textarea name="address" placeholder="Enter Your Address" required></textarea><br><br>
+
+            <button type="button" onclick="form_handle()">Submit</button>
+        </form>
+    </div>
+
+    <div id="display"></div>
+
+    <script>
+        function form_handle() {
+            // Getting form values
+            let fname1 = document.rgs.fullname.value;
+            let fname2 = document.rgs.gender.value;
+            let fname3 = document.rgs.district.value;
+            let fname4 = document.rgs.address.value;
+
+            // Displaying the data below the form
+            if (fname1 && fname2 && fname3 && fname4) {
+                let displayContent = `
+                    <h4>Form Submitted Successfully!</h4>
+                    <p><strong>Name:</strong> ${fname1}</p>
+                    <p><strong>Gender:</strong> ${fname2}</p>
+                    <p><strong>District:</strong> ${fname3}</p>
+                    <p><strong>Address:</strong> ${fname4}</p>
+                `;
+                document.getElementById("display").innerHTML = displayContent;
+            } else {
+                alert("Please fill in all fields.");
+            }
+        }
+    </script>
+</body>
+</html>
