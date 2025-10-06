@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+
+</head>
+
+<body>
+
+    <h3>Registration Form</h3>
+    <form action="" name="rgs">
+        Name :<br>
+        <input type="text" name="fullname" placeholder="Enter Your Name" required><br><br>
+
+        Gender : <br>
+        <input type="radio" name="gender" value="Male" required> Male
+        <input type="radio" name="gender" value="Female" required> Female<br><br>
+
+        District :<br>
+        <select name="district" required>
+            <option value="" disabled selected>Select one</option>
+            <option value="Madaripur">Madaripur</option>
+            <option value="Dhaka">Dhaka</option>
+            <option value="Rajshahi">Rajshahi</option>
+            <option value="Barishal">Barishal</option>
+            <option value="Cumilla">Cumilla</option>
+            <option value="Rangpur">Rangpur</option>
+        </select><br><br>
+
+        Address : <br>
+        <textarea name="address" placeholder="Enter Your Address" required></textarea><br><br>
+        Skills : <br>
+        <input type="checkbox" name="skills" value="HTML">HTML
+        <input type="checkbox" name="skills" value="CSS">CSS
+        <input type="checkbox" name="skills" value="JS">JS
+        <input type="checkbox" name="skills" value="PHP">PHP
+        <input type="checkbox" name="skills" value="MySQL">MySQL<br><br>
+
+
+        <button type="button" onclick="form_handle()">Submit</button>
+    </form>
+
+
+    <div id="display"></div>
+
+    <script>
+        function form_handle() {
+            // Getting form values
+            let fname = document.rgs.fullname.value;
+            let gender = document.rgs.gender.value;
+            let district = document.rgs.district.value;
+            let address = document.rgs.address.value;
+
+            // let output = "Hello " +  fname + "<br>" + "Gender : " +  gender + "<br>" + "District : " + district + "<br>" + "Address : " + address;
+
+            //     document.getElementById("display").innerHTML = output;
+            let skills = "";
+            let checkboxs = document.getElementByClassName("skills");
+            for (let i = 0; i < checkboxs.length; i++); {
+                if (checkboxs[i].checked) {
+                    skills += checkboxs[i].value + ",";
+                }
+            }
+            output = "<h1>" + fname + "</h1>";
+            output += gender;
+            output += skills;
+
+
+            document.getElementById("display").innerHTML = output;
+
+
+        }
+    </script>
+</body>
+
+</html>

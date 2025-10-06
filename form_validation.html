@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h3>Form Validation</h3>
+
+    <form action="" name="frm_validate" onsubmit="return formValidation()">
+        Name : <br>
+        <input type="text" name="fullname" placeholder="Enter Your name"><br>
+        Email : <br>
+        <input type="email" name="email" placeholder="Enter Your email"><br>
+        Phone : <br>
+        <input type="number" name="Phonenumber" placeholder="Enter Your number"><br>
+        Address : <br>
+        <textarea name="address" placeholder="Enter your Address" rows="3" cols="21"></textarea> <br>
+        <input type="submit" name="submit" value="SUBMIT">
+
+    </form>
+
+    <script>
+        function formValidation() {
+            let fullname = document.frm_validate.fullname.value;
+            let email = document.frm_validate.email.value;
+            let Phonenumber = document.frm_validate.Phonenumber.value;
+            let address = document.frm_validate.address.value;
+
+            if (fullname=="") {
+                alert(" Enter Your Name");
+                return false;
+            }
+            if (email=="") {
+                alert("Enter Your Email");
+                return false;
+            }
+            if (Phonenumber=="") {
+                alert(" Enter Your number");
+                return false;
+            }
+            if (address=="") {
+                alert(" Enter Your address ");
+                return false;
+            }
+
+            
+            return true;
+
+
+        }
+
+        formvalidation()
+    </script>
+
+
+</body>
+
+</html>
