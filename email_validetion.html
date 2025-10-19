@@ -6,27 +6,36 @@
     <title>Document</title>
 </head>
 <body>
-    
+     <script>
+        function emailvalidation(){
+            let email = document.myform.email.value;
+            let c_email = document.myform.c_email.value;
+            let Pattern = /[A-z0-9]+@[A-z0-9]+\.[A-z]{2,4}$/;
+            
 
-    <script>
-        function email_validetion(){
-            let pattern = /[A-z0-9._]+[A-z0-9.-]+\.[A-z]{2,4}$/i;
-            if(document.myform.email.value.search(pattern)==-1){
-                alert("invalid Email")
-            }else if(document.myform.email.value!=document.myform.email2.value){
-                 alert("Email does not match")
-            }else{
-                alert ("your email is valid")
-            }
+           if( email.search(Pattern) == -1){
+            alert("invalid email format")
+           }
+           else if(email!=c_email){
+            alert(" email does not match")
+           }
+           else{
+            alert("valid email format")
+           }
+
         }
     </script>
-    <form name="myform">
-        <strong>Email Id :</strong><br>
-        <input type="email" name="email" placeholder="Enter your Email id" ><br>
-        <strong> Confrim Email Id :</strong><br>
-        <input type="email" name="email2" placeholder="confrim your Email id" ><br><br>
 
-        <input type="button" value="Submit"  onclick="email_validetion()" name="save">
-    </form>
+<form name="myform">
+    Email : <br>
+    <input type="text" name="email" placeholder="Enter your email"> <br>
+    Confrim Email : <br>
+    <input type="text" name="c_email" placeholder="confrim email"> <br><br>
+
+    <input type="button" value="submit" onclick="emailvalidation()" >
+</form>
+
+
+
 </body>
 </html>
