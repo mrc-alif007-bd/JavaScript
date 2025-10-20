@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>login Form</h3>
+    <form action="" name="loginform">
+        <input type="text" name="fname" placeholder="Enter your full name"> <br>
+        <input type="password" name="password" placeholder="Enter your password"> <br>
+        <input type="password" name="c_password" placeholder="confrim your password"> <br>
+        <button type="button" onclick="loginValidation()">submit</button>
+        <p></p>
+
+    </form>
+
+    <script>
+        function loginValidation(){
+            let fullname = document.loginform.fname.value;
+            let password = document.loginform.password.value;
+            let conPassword = document.loginform.c_password.value;
+
+            let errMsg="";
+
+            if(fullname == ""){
+                errMsg += ("Enter Your Name\n");
+            }else if(fullname.length<5|| fullname.length>10){
+                errMsg += ("Name must be 5 to 10 charecter\n");
+            }
+            if(password == ""){
+                errMsg += ("Enter Your Passworde\n");
+            }
+            else if(password.length<4|| password.length>8){
+                errMsg += ("password must be 5 to 10 charecter\n");
+            }
+            if(conPassword == ""){
+                errMsg += ("Enter your Password again\n");
+            }
+            else if(password!=conPassword){
+                errMsg += ("Password doesn't Match\n");
+            }
+            if(errMsg != ""){
+                alert (errMsg);
+            }
+            // else{
+            //     // alert("Login Done")
+            // errMsg += ("Login Done\n");
+            // }
+            document.getElementById("display").innerHTML = errMsg;
+        }
+        
+    </script>
+    <div id="display"></div>
+</body>
+</html>

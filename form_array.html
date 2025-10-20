@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>Form Elements as array</h3>
+    <form action="">
+      Name : <br />
+      <input type="text" name="fullname" placeholder="Enter your Full Name" />
+      <br />
+      Gender : <br />
+      <input type="radio" name="gender" value="male" />male
+      <input type="radio" name="gender" value="female" />female <br />
+      District : <br />
+      <select name="district">
+        <option value="" disabled selected>select</option>
+        <option>Dhaka</option>
+        <option>rajshahi</option>
+        <option>cumilla</option>
+        <option>Chittagong</option>
+        <option>Sylhet</option>
+        <option>Barishal</option></select
+      ><br />
+      Adress : <br />
+      <textarea name="address" rows="3" cols="22"></textarea> <br />
+      <button type="button" onclick="formData()">Submit</button>
+    </form>
+
+    <script>
+      function formData() {
+        let dataDisplay = "";
+        for (let i = 0; i < document.forms[0].length; i++) {
+          
+          if (document.forms[0].elements[i].type == "radio") {
+            if (document.forms[0].elements[i].checked) {
+              dataDisplay += document.forms[0].elements[i].value + "<br>";
+            }
+          } else {
+            dataDisplay += document.forms[0].elements[i].value + "<br>";
+          }
+        }
+        document.getElementById("display").innerHTML = dataDisplay;
+      }
+    </script>
+
+    <div id="display"></div>
+  </body>
+</html>
