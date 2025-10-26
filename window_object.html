@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Example</title>
+  </head>
+  <body>
+    <form id="myform" name="form" onsubmit="myform(event)">
+      Name : <br />
+      <input type="text" id="fullname" placeholder="Enter Your name" /><br />
+      Address : <br />
+      <input type="text" id="address" placeholder="Enter Your address" /><br />
+      <br /><br />
+      <input type="submit" value="SUBMIT" />
+    </form>
+
+    <script>
+      function myform(event) {
+        event.preventDefault(); // Stop form from reloading
+        const name = document.getElementById("fullname").value;
+
+        let x = window.open("", "abc", "width=400,height=300,top=250,left=300");
+        let output = `Name: ${name}`;
+        x.document.write(output);
+      }
+    </script>
+  </body>
+</html>

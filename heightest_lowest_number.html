@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+             
+        let x=(prompt("enter your number"));
+        let y=(prompt("enter your number"));
+        let z=(prompt("enter your number"));
+
+        const numbers = [x, y, z];
+
+        let max = numbers[0];
+        let min = numbers[0];
+        
+
+
+        for(let i=0;i<numbers.length;i++){
+            if(numbers[i]>max){
+                max = numbers[i];
+            }
+            if(numbers[i]<min){
+                min = numbers[i];
+            }
+        }
+        document.write("max : " + max + "min : " + min)
+
+    </script>
+
+</body>
+</html>

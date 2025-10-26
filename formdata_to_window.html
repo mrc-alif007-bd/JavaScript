@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="FormData.js"></script>
+  </head>
+  <body>
+    <form action="" name="myform">
+      Name : <br />
+      <input type="text" name="fullname" placeholder="name" /><br />
+      Address : <br />
+      <textarea name="address" placeholder="Address"></textarea> <br />
+      Phone : <br />
+      <input type="text" name="Phone" placeholder="Phone" /><br /><br />
+      <button type="button" onclick="callwindow()">Click Here</button>
+    </form>
+    <script>
+      function callwindow() {
+        let fullname = document.myform.fullname.value;
+        let Address = document.myform.address.value;
+        let Phone = document.myform.Phone.value;
+        
+
+        //new object initialize
+        const myobject = new FormData(fullname, Address, Phone);//formdata->object,(fullname, Address, Phone)->peramiter
+
+        let data = myobject.DataDisplay();//DataDisplay->method
+
+        let mywindow = window.open("", "", "width=400,height=250 top=200,left=450");
+
+        mywindow.document.write(data);
+      }
+    </script>
+  </body>
+</html>
