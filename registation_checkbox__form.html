@@ -54,21 +54,27 @@
             let district = document.rgs.district.value;
             let address = document.rgs.address.value;
 
-            // let output = "Hello " +  fname + "<br>" + "Gender : " +  gender + "<br>" + "District : " + district + "<br>" + "Address : " + address;
+            
 
             //     document.getElementById("display").innerHTML = output;
-            let skills = "";
-            let checkboxs = document.getElementByClassName("skills");
-            for (let i = 0; i < checkboxs.length; i++); {
-                if (checkboxs[i].checked) {
-                    skills += checkboxs[i].value + ",";
-                }
+            // let skills = "";
+            // let checkboxs = document.getElementByClassName("skills");
+            // for (let i = 0; i < checkboxs.length; i++); {
+            //     if (checkboxs[i].checked) {
+            //         skills += checkboxs[i].value + ",";
+            //     }
+            // }
+            let skills =[];
+            const  ckbox = document.querySelectorAll('input[name="skills"]:checked')
+            for (let i = 0; i<ckbox.length;i++){
+                skills.push(ckbox[i].value)
             }
-            output = "<h1>" + fname + "</h1>";
-            output += gender;
-            output += skills;
 
+            // let output = "<h1>" + fname + "</h1>";
+            // output += gender;
+            
 
+            let output = "Hello " +  fname + "<br>" + "Gender : " +  gender + "<br>" + "District : " + district +"<br>" +"Skills : " + skills + "<br>" + "Address : " + address;
             document.getElementById("display").innerHTML = output;
 
 

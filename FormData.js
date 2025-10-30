@@ -12,4 +12,4 @@ class FormData {
         output += "Phone : " + this.Phone + "<br>" ;
         return output ;
     }
-}
+}  

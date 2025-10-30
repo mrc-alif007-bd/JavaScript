@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Form</h2>
+    <form action="" name="tform">
+    Name : <br>
+    <input type="text" name="name" placeholder="Entr your name "><br>
+    Phone : <br>
+    <input type="number" name="Phonenumber" placeholder="Enter Your number"><br>
+    Remarks : <br>
+    <textarea name="remarks" placeholder="Remarkes...."></textarea><br>
+    Gender : <br>
+    <input type="radio" name="gender" value="male">Male
+    <input type="radio" name="gender" value="female">Female <br>
+    Courses : <br>
+    <input type="checkbox" name="courses" value="NT">NT
+    <input type="checkbox" name="courses" value="IAD">IAD
+    <input type="checkbox" name="courses" value="DDD">DDD
+    <input type="checkbox" name="courses" value="ESAD">ESAD <br>
+    Location : <br>
+    <select name="location" id="">
+        <option value="" selected disabled>Selected</option>
+        <option >Banani</option>
+        <option >Dhanmondi</option>
+        <option >Mirpur</option>
+    </select><br><br>
+    <input type="button" value="submit" onclick="formSub(event)">
+
+    </form>
+
+    <div id="display"></div>
+    
+    <script>
+
+      function formSub(event) {
+        event.preventDefault(); // Stop form from reloading
+        const name = document.tform.name.value;
+        const Phone = document.tform.Phonenumber.value;
+        const remark = document.tform.remarks.value;
+        
+        const location = document.tform. location.value;
+
+        const Gender = [] ; 
+        const  rdo = document.querySelectorAll('input[name="gender"]:checked')
+            for (let i = 0; i<rdo.length;i++){
+                Gender.push(rdo[i].value)
+            }
+
+       let Courses =[];
+            const  ckbox = document.querySelectorAll('input[name="courses"]:checked')
+            for (let i = 0; i<ckbox.length;i++){
+                Courses.push(ckbox[i].value)
+            }
+        
+
+        let x = window.open("", "abc", "width=400,height=300,top=250,left=300");
+
+        let output ="";
+         output += `Name: ${name}<br>`;
+         output += `Phone: ${Phone}<br>`;
+         output += `Remark: ${remark}<br>`;
+         output += `Gender: ${Gender}<br>`;
+         output += `Courses: ${Courses.join(", ")}<br>`;
+         output += `Location: ${location}<br>`;
+        x.document.write(output);
+      }
+    </script>
+</body>
+</html>
